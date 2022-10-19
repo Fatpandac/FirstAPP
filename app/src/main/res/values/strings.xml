@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">重庆文理学院</string>
+    <string name="app_name">Android Example</string>
     <string name="university">重庆文理学院</string>
     <string name="school">人工智能学院</string>
     <string name="account">账户</string>
     <string name="password">密码</string>
     <string name="icon">icon</string>
+    <string name="desc_paper_pic">paper_pic</string>
+    <string name="login">登陆</string>
 </resources>
