@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fistapp.example.gridView.GridViewActivity
 import com.example.fistapp.example.listView.NewsListActivity
 import com.example.fistapp.example.viewPager.ViewPagerActivity
+import com.example.fistapp.pojo.Menu
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,25 +34,24 @@ class MainActivity : AppCompatActivity() {
     private fun initMenuList() {
         menuList.addAll(
             listOf(
-                Menu("ListView", NewsListActivity()),
-                Menu("GridView", GridViewActivity()),
-                Menu("ViewPager", ViewPagerActivity())
+                Menu(R.string.listIcon, "ListView", NewsListActivity()),
+                Menu(R.string.gridIcon, "GridView", GridViewActivity()),
+                Menu(R.string.cardsIcon, "ViewPager", ViewPagerActivity())
             )
         )
     }
 }
-
-
-class Menu(val title: String, val activity: AppCompatActivity)
 
 class MenuListAdapter(activity: MainActivity, private val resourceId: Int, data: ArrayList<Menu>) :
     ArrayAdapter<Menu>(activity, resourceId, data) {
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = LayoutInflater.from(context).inflate(resourceId, parent, false)
+        val menuIcon = view.findViewById<TextView>(R.id.menu_icon)
         val textView: TextView = view.findViewById(R.id.title_text)
         val menuItem = getItem(position) ?: return view
 
+        menuIcon.setText(menuItem.icon)
         textView.text = menuItem.title
 
         return view
