@@ -23,6 +23,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".example.viewPager.ViewPagerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_view_pager"
+            android:theme="@style/Theme.FistAPP.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".example.gridView.ShowImageActivity"
             android:exported="false">
             <meta-data

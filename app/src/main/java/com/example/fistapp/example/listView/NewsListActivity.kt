@@ -11,6 +11,7 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fistapp.R
+import com.example.fistapp.pojo.News
 import java.util.*
 
 class NewsListActivity : AppCompatActivity() {
@@ -47,8 +48,6 @@ class NewsListActivity : AppCompatActivity() {
         }
     }
 }
-
-class News(val img: Int, val title: String, val date: Date, val newIntent: () -> Unit)
 
 class NewsListAdapter(activity: NewsListActivity, private val resourceId: Int, data: List<News>) :
     ArrayAdapter<News>(activity, resourceId, data) {

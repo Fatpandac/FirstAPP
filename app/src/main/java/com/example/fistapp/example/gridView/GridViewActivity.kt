@@ -10,6 +10,7 @@ import android.widget.GridView
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fistapp.R
+import com.example.fistapp.pojo.Image
 
 class GridViewActivity : AppCompatActivity() {
 
@@ -47,8 +48,6 @@ class GridViewActivity : AppCompatActivity() {
     }
 
 }
-
-class Image(val image: Int, val desc: String)
 
 class GridViewAdapter(activity: GridViewActivity, private val resourceId: Int, data: List<Image>) :
     ArrayAdapter<Image>(activity, resourceId, data) {

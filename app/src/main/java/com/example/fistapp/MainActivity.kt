@@ -1,5 +1,6 @@
 package com.example.fistapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fistapp.example.gridView.GridViewActivity
 import com.example.fistapp.example.listView.NewsListActivity
+import com.example.fistapp.example.viewPager.ViewPagerActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,16 +35,18 @@ class MainActivity : AppCompatActivity() {
             listOf(
                 Menu("ListView", NewsListActivity()),
                 Menu("GridView", GridViewActivity()),
+                Menu("ViewPager", ViewPagerActivity())
             )
         )
     }
 }
 
 
-class Menu(val title: String, val activity: AppCompatActivity);
+class Menu(val title: String, val activity: AppCompatActivity)
 
 class MenuListAdapter(activity: MainActivity, private val resourceId: Int, data: ArrayList<Menu>) :
     ArrayAdapter<Menu>(activity, resourceId, data) {
+    @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = LayoutInflater.from(context).inflate(resourceId, parent, false)
         val textView: TextView = view.findViewById(R.id.title_text)
