@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fistapp.example.fetchDataImageUrl.FetchDataImageURLActivity
 import com.example.fistapp.example.gridView.GridViewActivity
 import com.example.fistapp.example.listView.NewsListActivity
 import com.example.fistapp.example.viewPager.ViewPagerActivity
@@ -36,7 +37,12 @@ class MainActivity : AppCompatActivity() {
             listOf(
                 Menu(R.string.listIcon, "ListView", NewsListActivity()),
                 Menu(R.string.gridIcon, "GridView", GridViewActivity()),
-                Menu(R.string.cardsIcon, "ViewPager", ViewPagerActivity())
+                Menu(R.string.cardsIcon, "ViewPager", ViewPagerActivity()),
+                Menu(
+                    R.string.downloadIcon,
+                    "Fetch Data and Show Images by URL",
+                    FetchDataImageURLActivity()
+                )
             )
         )
     }

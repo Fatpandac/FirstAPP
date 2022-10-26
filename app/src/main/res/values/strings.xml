@@ -11,4 +11,5 @@
     <string name="cardsIcon">&#xe61b;</string>
     <string name="listIcon">&#xe67a;</string>
     <string name="gridIcon">&#xe671;</string>
+    <string name="downloadIcon">&#xe63c;</string>
 </resources>
