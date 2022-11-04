@@ -1,34 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/loading_status"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/fetch_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:layout_height="180dp" />
 
-    <ImageView
-        android:id="@+id/fetch_image_view1"
+    <LinearLayout
+        android:id="@+id/fetch_navigator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="Image" />
-
-    <ImageView
-        android:id="@+id/fetch_image_view2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="Image" />
-
-    <ImageView
-        android:id="@+id/fetch_image_view3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="Image" />
+        android:orientation="horizontal" />
 </LinearLayout>

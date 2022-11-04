@@ -17,9 +17,9 @@ class ViewPagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_pager)
-        val viewPagerActivity = findViewById<ViewPager>(R.id.pager)
+        val viewPager = findViewById<ViewPager>(R.id.pager)
         initPageList()
-        viewPagerActivity.adapter = MyPageAdapter(pageList)
+        viewPager.adapter = MyPageAdapter(pageList)
     }
 
     private fun initPageList() {

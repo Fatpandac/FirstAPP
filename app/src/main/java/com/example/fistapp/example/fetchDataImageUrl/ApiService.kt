@@ -1,6 +1,7 @@
 package com.example.fistapp.example.fetchDataImageUrl
 
-import com.example.fistapp.pojo.FetchData
+import com.example.fistapp.pojo.FetchNavigateItem
+import com.example.fistapp.pojo.FetchViewPagerData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -18,7 +19,11 @@ private val retrofit = Retrofit.Builder()
 
 interface ApiService {
     @GET("home/swiperdata")
-    suspend fun getPhotos(): FetchData
+    suspend fun getCarousel(): FetchViewPagerData
+
+    @GET("home/catitems")
+    suspend fun getNavigateItem(): FetchNavigateItem
+
 }
 
 object Api {
