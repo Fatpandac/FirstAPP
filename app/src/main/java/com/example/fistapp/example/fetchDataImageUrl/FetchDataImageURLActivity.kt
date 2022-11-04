@@ -22,6 +22,7 @@ class FetchDataImageURLActivity : AppCompatActivity(), CoroutineScope by MainSco
 
     private val carouselList = ArrayList<ImageView>()
     private val navigateList = ArrayList<ImageView>()
+    private val floorViewList = ArrayList<LinearLayout>()
     private var screenWidth: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,13 +34,21 @@ class FetchDataImageURLActivity : AppCompatActivity(), CoroutineScope by MainSco
 
         val viewPager = findViewById<ViewPager>(R.id.fetch_view_pager)
         val navigator = findViewById<LinearLayout>(R.id.fetch_navigator)
+        val floorLayout = findViewById<LinearLayout>(R.id.fetch_floor)
+
         launch {
             loadCarouselData()
             viewPager.adapter = MyPageAdapter(carouselList)
             loadNavigateData()
             for (item in navigateList) {
                 navigator.addView(
-                    item,
+                    item
+                )
+            }
+            loadFloorData()
+            for (item in floorViewList) {
+                floorLayout.addView(
+                    item
                 )
             }
         }
@@ -74,6 +83,27 @@ class FetchDataImageURLActivity : AppCompatActivity(), CoroutineScope by MainSco
                 )
                 imageView.setPadding(5)
                 navigateList.add(imageView)
+            }
+        } catch (e: Exception) {
+            Log.e("Error", e.toString())
+        }
+    }
+
+    private suspend fun loadFloorData() {
+        try {
+            val imgIDList = listOf(R.id.img0, R.id.img1, R.id.img2, R.id.img3, R.id.img4)
+            val res = Api.retrofitService.getFloorData()
+            val floors = res.message
+            for (floor in floors) {
+                val floorView =
+                    LinearLayout.inflate(baseContext, R.layout.floor_item, null) as LinearLayout
+                val floorTitle = floorView.findViewById<ImageView>(R.id.floor_title)
+                Glide.with(this).load(floor.floorTitle.img).into(floorTitle)
+                for ((idx, product) in floor.productList.withIndex()) {
+                    val productImg = floorView.findViewById<ImageView>(imgIDList[idx])
+                    Glide.with(this).load(product.img).into(productImg)
+                }
+                floorViewList.add(floorView)
             }
         } catch (e: Exception) {
             Log.e("Error", e.toString())
