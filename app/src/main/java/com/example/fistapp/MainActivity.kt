@@ -11,6 +11,7 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fistapp.example.fetchDataImageUrl.FetchDataImageURLActivity
+import com.example.fistapp.example.fragment.MyFragmentActivity
 import com.example.fistapp.example.gridView.GridViewActivity
 import com.example.fistapp.example.listView.NewsListActivity
 import com.example.fistapp.example.viewPager.ViewPagerActivity
@@ -42,7 +43,8 @@ class MainActivity : AppCompatActivity() {
                     R.string.downloadIcon,
                     "Fetch Data and Show Images by URL",
                     FetchDataImageURLActivity()
-                )
+                ),
+                Menu(R.string.fragment, "Fragment", MyFragmentActivity())
             )
         )
     }

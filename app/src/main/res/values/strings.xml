@@ -8,8 +8,9 @@
     <string name="desc_paper_pic">paper_pic</string>
     <string name="login">登陆</string>
     <string name="title_activity_view_pager">ViewPager</string>
-    <string name="cardsIcon">&#xe61b;</string>
-    <string name="listIcon">&#xe67a;</string>
-    <string name="gridIcon">&#xe671;</string>
-    <string name="downloadIcon">&#xe63c;</string>
+    <string name="cardsIcon">&#xe62d;</string>
+    <string name="listIcon">&#xe7f4;</string>
+    <string name="gridIcon">&#xe68a;</string>
+    <string name="downloadIcon">&#xe7ef;</string>
+    <string name="fragment">&#xe81b;</string>
 </resources>
