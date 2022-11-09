@@ -12,5 +12,7 @@
     <string name="listIcon">&#xe7f4;</string>
     <string name="gridIcon">&#xe68a;</string>
     <string name="downloadIcon">&#xe7ef;</string>
-    <string name="fragment">&#xe81b;</string>
+    <string name="fragmentIcon">&#xe81b;</string>
+    <string name="viewIcon">&#xe632;</string>
+    <string name="hello_world">Hello World</string>
 </resources>
