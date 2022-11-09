@@ -1,5 +1,6 @@
-package com.example.fistapp.example.fetchDataImageUrl
+package com.example.fistapp.server
 
+import com.example.fistapp.pojo.FetchCategories
 import com.example.fistapp.pojo.FetchFloorData
 import com.example.fistapp.pojo.FetchNavigateData
 import com.example.fistapp.pojo.FetchViewPagerData
@@ -27,6 +28,9 @@ interface ApiService {
 
     @GET("home/floordata")
     suspend fun getFloorData(): FetchFloorData
+
+    @GET("categories")
+    suspend fun getCategories(): FetchCategories
 }
 
 object Api {

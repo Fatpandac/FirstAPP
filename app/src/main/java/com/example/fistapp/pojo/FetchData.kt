@@ -17,6 +17,40 @@ data class FetchFloorData(
     val meta: FetchMeta
 )
 
+data class FetchCategories(
+    val message: List<FetchCategory>,
+    val meta: FetchMeta
+)
+
+data class FetchCategory(
+    @Json(name = "cat_deleted") val catDeleted: Boolean,
+    @Json(name = "cat_icon") val catIcon: String?,
+    @Json(name = "cat_id") val catID: Int,
+    @Json(name = "cat_level") val catLevel: Int,
+    @Json(name = "cat_name") val catName: String,
+    @Json(name = "cat_pid") val catPid: Int,
+    val children: List<CategoryChild>
+)
+
+data class CategoryChild(
+    @Json(name = "cat_deleted") val catDeleted: Boolean,
+    @Json(name = "cat_icon") val catIcon: String?,
+    @Json(name = "cat_id") val catID: Int,
+    @Json(name = "cat_level") val catLevel: Int,
+    @Json(name = "cat_name") val catName: String,
+    @Json(name = "cat_pid") val catPid: Int,
+    val children: List<CategoryItemChild>?,
+)
+
+data class CategoryItemChild(
+    @Json(name = "cat_deleted") val catDeleted: Boolean,
+    @Json(name = "cat_icon") val catIcon: String?,
+    @Json(name = "cat_id") val catID: Int,
+    @Json(name = "cat_level") val catLevel: Int,
+    @Json(name = "cat_name") val catName: String,
+    @Json(name = "cat_pid") val catPid: Int,
+)
+
 data class FetchFloor(
     @Json(name = "floor_title") val floorTitle: FloorTitle,
     @Json(name = "product_list") val productList: List<ProductList>,
