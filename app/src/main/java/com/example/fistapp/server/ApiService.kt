@@ -1,14 +1,12 @@
 package com.example.fistapp.server
 
-import com.example.fistapp.pojo.FetchCategories
-import com.example.fistapp.pojo.FetchFloorData
-import com.example.fistapp.pojo.FetchNavigateData
-import com.example.fistapp.pojo.FetchViewPagerData
+import com.example.fistapp.pojo.*
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 private const val BASE_URL = "https://api-hmugo-web.itheima.net/api/public/v1/"
 private val moshi = Moshi.Builder()
@@ -31,6 +29,9 @@ interface ApiService {
 
     @GET("categories")
     suspend fun getCategories(): FetchCategories
+
+    @GET("goods/search")
+    suspend fun getProducts(@Query("pagenum") pageNum: Int): FetchProducts
 }
 
 object Api {

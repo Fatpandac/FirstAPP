@@ -22,6 +22,34 @@ data class FetchCategories(
     val meta: FetchMeta
 )
 
+data class FetchProducts(
+    val message: ProductsMessage,
+    val meta: FetchMeta
+)
+
+data class ProductsMessage(
+    val goods: List<Product>,
+    @Json(name = "pagenum") val pageNum: Int,
+    val total: Int
+)
+
+data class Product(
+    @Json(name = "add_time") val addTime: Int,
+    @Json(name = "cat_id") val addID: Int,
+    @Json(name = "cat_one_id") val addOneID: Int,
+    @Json(name = "cat_two_id") val addTwoID: Int,
+    @Json(name = "cat_three_id") val addThreeID: Int,
+    @Json(name = "goods_big_logo") val goodsBigLogo: String,
+    @Json(name = "goods_id") val goodsID: Int,
+    @Json(name = "goods_name") val goodsName: String,
+    @Json(name = "goods_number") val goodsNumber: Int,
+    @Json(name = "goods_small_logo") val goodsSmallLogo: String,
+    @Json(name = "goods_weight") val goodsWeight: Int,
+    @Json(name = "hot_mumber") val hotNumber: Int,
+    @Json(name = "is_promote") val isPromote: Boolean,
+    @Json(name = "upd_time") val updTime: Int,
+)
+
 data class FetchCategory(
     @Json(name = "cat_deleted") val catDeleted: Boolean,
     @Json(name = "cat_icon") val catIcon: String?,

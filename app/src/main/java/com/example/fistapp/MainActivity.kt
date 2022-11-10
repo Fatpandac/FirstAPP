@@ -46,7 +46,8 @@ class MainActivity : AppCompatActivity() {
                     "Fetch Data and Show Images by URL",
                     FetchDataImageURLActivity()
                 ),
-                Menu(R.string.fragmentIcon, "Fragment", MyFragmentActivity())
+                Menu(R.string.fragmentIcon, "Fragment", MyFragmentActivity()),
+                Menu(R.string.refresh, "Refresh", RefreshActivity())
             )
         )
     }
