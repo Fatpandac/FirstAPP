@@ -23,15 +23,16 @@ import kotlinx.coroutines.launch
 
 class RefreshActivity : AppCompatActivity(), CoroutineScope by MainScope() {
     private var productList = ArrayList<Product>()
+    private var recyclerView: RecyclerView? = null
+    private val recyclerViewAdapter = CustomAdapter(productList)
     private var idx: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_refresh)
-        val recyclerView = this.findViewById<RecyclerView>(R.id.refresh_content)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val recyclerViewAdapter = CustomAdapter(productList)
-        recyclerView.adapter = recyclerViewAdapter
+        recyclerView = this.findViewById(R.id.refresh_content)
+        recyclerView?.layoutManager = LinearLayoutManager(this)
+        recyclerView?.adapter = recyclerViewAdapter
         val refreshLayout = findViewById<View>(R.id.refreshLayout) as RefreshLayout
 
         launch {
@@ -44,6 +45,7 @@ class RefreshActivity : AppCompatActivity(), CoroutineScope by MainScope() {
             launch {
                 try {
                     idx = 1
+                    productList.clear()
                     recyclerViewAdapter.notifyItemChanged(loadNewProducts(idx++))
                     it.finishRefresh()
                 } catch (E: Exception) {
