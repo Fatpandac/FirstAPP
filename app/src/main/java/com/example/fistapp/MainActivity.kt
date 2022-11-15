@@ -15,6 +15,7 @@ import com.example.fistapp.example.fragment.MyFragmentActivity
 import com.example.fistapp.example.gridView.GridViewActivity
 import com.example.fistapp.example.listView.NewsListActivity
 import com.example.fistapp.example.loginView.LoginActivity
+import com.example.fistapp.example.refresh.RefreshActivity
 import com.example.fistapp.example.viewPager.ViewPagerActivity
 import com.example.fistapp.pojo.Menu
 
