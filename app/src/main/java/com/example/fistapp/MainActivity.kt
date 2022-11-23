@@ -16,6 +16,7 @@ import com.example.fistapp.example.gridView.GridViewActivity
 import com.example.fistapp.example.listView.NewsListActivity
 import com.example.fistapp.example.loginView.LoginActivity
 import com.example.fistapp.example.refresh.RefreshActivity
+import com.example.fistapp.example.services.PlayAudioActivity
 import com.example.fistapp.example.viewPager.ViewPagerActivity
 import com.example.fistapp.pojo.Menu
 
@@ -48,7 +49,8 @@ class MainActivity : AppCompatActivity() {
                     FetchDataImageURLActivity()
                 ),
                 Menu(R.string.fragmentIcon, "Fragment", MyFragmentActivity()),
-                Menu(R.string.refresh, "Refresh", RefreshActivity())
+                Menu(R.string.refresh, "Refresh", RefreshActivity()),
+                Menu(R.string.playIcon, "Play Music", PlayAudioActivity())
             )
         )
     }
