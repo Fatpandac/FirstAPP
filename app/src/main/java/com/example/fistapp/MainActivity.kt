@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fistapp.example.broadcast.TimerActivity
 import com.example.fistapp.example.fetchDataImageUrl.FetchDataImageURLActivity
 import com.example.fistapp.example.fragment.MyFragmentActivity
 import com.example.fistapp.example.gridView.GridViewActivity
@@ -50,7 +51,8 @@ class MainActivity : AppCompatActivity() {
                 ),
                 Menu(R.string.fragmentIcon, "Fragment", MyFragmentActivity()),
                 Menu(R.string.refresh, "Refresh", RefreshActivity()),
-                Menu(R.string.playIcon, "Play Music", PlayAudioActivity())
+                Menu(R.string.playIcon, "Play Music", PlayAudioActivity()),
+                Menu(R.string.timerIcon, "Timer Broadcast", TimerActivity()),
             )
         )
     }

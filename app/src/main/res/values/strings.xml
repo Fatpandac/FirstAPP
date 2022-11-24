@@ -17,7 +17,9 @@
     <string name="viewIcon">&#xe632;</string>
     <string name="refresh">&#xe71e;</string>
     <string name="playIcon">&#xe67a;</string>
+    <string name="timerIcon">&#xe64b;</string>
     <string name="pause">暂停</string>
     <string name="play">播放</string>
     <string name="stop">停止</string>
+    <string name="start">开始</string>
 </resources>
