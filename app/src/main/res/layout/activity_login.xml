@@ -56,6 +56,12 @@
                 tools:ignore="Autofill,LabelFor" />
         </LinearLayout>
 
+        <CheckBox
+            android:text="@string/rememberPassword"
+            android:id="@+id/rememberCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/login"
             android:layout_width="wrap_content"
